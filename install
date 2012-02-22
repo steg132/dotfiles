@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function overwrite_and_link {
+  ([ -f $1 ] | [ -L $1 ]) && rm $1
+  ln -s $2 $1
+}
+
+overwrite_and_link ~/.vimrc $(pwd)/vimrc
+overwrite_and_link ~/.tmux.conf $(pwd)/tmux.conf
+
+mkdir -p ~/.vim/{backup,tmp,colors,plugin}
+
+overwrite_and_link \
+  ~/.vim/colors/lucius.vim \
+  $(pwd)/vim/colors/lucius.vim
+overwrite_and_link \
+  ~/.vim/plugin/colorsupport.vim \
+  $(pwd)/vim/plugin/colorsupport.vim
