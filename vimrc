@@ -8,7 +8,7 @@ set nocompatible
 
 " syntax highlighting
 filetype plugin indent on
-syntax enable
+syntax on
 set background=dark
 
 " use a 256 color scheme if we support it
@@ -39,11 +39,13 @@ set softtabstop=2
 " a column width of 80 for coding is generally standard, so lets show it
 " NOTE: Only supported in Vim 7.3 and above
 if exists('+colorcolumn')
-  set colorcolumn=80
+  "set colorcolumn=80
 endif
 
 " python uses a 4-space standard
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4
 
 " custom mappings {
+  nmap <silent> ww :NERDTreeToggle<CR>
 " }
+
