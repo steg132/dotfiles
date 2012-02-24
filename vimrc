@@ -22,6 +22,9 @@ if &t_Co > 255
   " No reason to catch the exception if lucius doesn't exist. If it's not
   " there, then we just won't use it.
   :silent! color xoria256
+
+  " small tweak to support transparent terminals
+  hi Normal ctermbg=None guibg=None
 endif
 
 " mouse support
@@ -44,6 +47,9 @@ set softtabstop=2
 
 " python uses a 4-space standard
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4
+
+" disabling colorsupport for now
+let g:loaded_colorsupport = 1 
 
 " NERDTree configuration
 let NERDTreeIgnore = ['\.o$'] 
