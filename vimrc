@@ -45,5 +45,10 @@ set softtabstop=2
 " python uses a 4-space standard
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4
 
+" NERDTree configuration
+let NERDTreeIgnore = ['\.o$'] 
+
 " custom mappings {
+  nmap <silent> ww :NERDTreeToggle<CR>
 " }
+
