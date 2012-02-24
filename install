@@ -14,6 +14,15 @@ mkdir -p ~/.vim/{backup,tmp,colors,plugin,nerdtree_plugin,doc,syntax}
 overwrite_and_link \
   ~/.vim/colors/lucius.vim \
   $(pwd)/vim/colors/lucius.vim
+overwrite_and_link \
+  ~/.vim/colors/darkspectrum.vim \
+  $(pwd)/vim/colors/darkspectrum.vim
+overwrite_and_link \
+  ~/.vim/colors/molokai.vim \
+  $(pwd)/vim/colors/molokai.vim
+overwrite_and_link \
+  ~/.vim/colors/xoria256.vim \
+  $(pwd)/vim/colors/xoria256.vim
 
 # .vim/plugin
 overwrite_and_link \
@@ -37,7 +46,6 @@ overwrite_and_link \
 overwrite_and_link \
   ~/.vim/nerdtree_plugin/exec_menuitem.vim \
   $(pwd)/vim/nerdtree_plugin/exec_menuitem.vim
-
 overwrite_and_link \
   ~/.vim/nerdtree_plugin/fs_menu.vim \
   $(pwd)/vim/nerdtree_plugin/fs_menu.vim
