@@ -25,6 +25,7 @@ if &t_Co > 255
 
   " small tweak to support transparent terminals
   hi Normal ctermbg=None guibg=None
+  hi NonText ctermbg=None guibg=None
 endif
 
 " mouse support
