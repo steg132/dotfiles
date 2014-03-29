@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/steg132/Downloads/apache-tomcat-7.0.32/webapps/ROOT'
+let g:netrw_dirhist_2='/Users/steg132/Downloads/apache-tomcat-7.0.32/logs'
+let g:netrw_dirhist_3='/Users/steg132/.irssi'
+let g:netrw_dirhist_4='/Users/steg132/Development'
+let g:netrw_dirhist_5='/Users/steg132/dev/entityjs/test0/builds'
+let g:netrw_dirhist_6='/Users/steg132/.ssh'

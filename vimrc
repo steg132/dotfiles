@@ -1,61 +1,32 @@
-" I like backups, but not when they clutter the filesystem
-set backup
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
-
-" allowing vim's 'improved' functionality
-set nocompatible
-
-" syntax highlighting
+" Begin .vimrc created April 21, 2012
+call pathogen#infect()
+syntax on
 filetype plugin indent on
-syntax enable
-set background=dark
 
-" a column width of 80 for coding is generally standard, so lets show it
-" NOTE: Only supported in Vim 7.3 and above
-if exists('+colorcolumn')
-  set colorcolumn=80
-endif
-
-" use a 256 color scheme if we support it
-if &t_Co > 255
-  " No reason to catch the exception if lucius doesn't exist. If it's not
-  " there, then we just won't use it.
-  :silent! color xoria256
-
-  " small tweak to support transparent terminals
-  hi Normal ctermbg=None guibg=None
-  hi NonText ctermbg=None guibg=None
-endif
-
-" mouse support
-set mouse=a
-set ttymouse=xterm2
-
-" line numbers
-set number
-
-" so we always know where we are in a file
-set ruler
-
-" spaces instead of tabs (yes, I'm one of -those-)
-set expandtab
-set smarttab
-
-" tab width
+set ts=2
 set shiftwidth=2
-set softtabstop=2
+set number
+set t_Co=256
 
-" python uses a 4-space standard
-autocmd FileType python setlocal shiftwidth=4 softtabstop=4
+" Nerd Tree Auto Start
+autocmd vimenter * NERDTree
+autocmd vimenter * if argc() | wincmd l | endif
 
-" disabling colorsupport for now
-let g:loaded_colorsupport = 1 
+" Close vim if the last tab is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Ignore object files
+let NERDTreeIgnore = ['\.o$']
 
-" NERDTree configuration
-let NERDTreeIgnore = ['\.o$'] 
+" Use Ctrl-[hjkl] to navigate between active panes 
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
-" custom mappings {
-  nmap <silent> ww :NERDTreeToggle<CR>
-" }
+" Coloring
+highlight Comment ctermfg=gray
+highlight String ctermfg=red
+highlight Number ctermfg=red
+
+" End .vimrc
 
