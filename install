@@ -5,48 +5,9 @@ function overwrite_and_link {
   ln -s $2 $1
 }
 
+# Creates a Symbolic link into the corresponding
+# folders and files
 overwrite_and_link ~/.vimrc $(pwd)/vimrc
 overwrite_and_link ~/.tmux.conf $(pwd)/tmux.conf
-
-mkdir -p ~/.vim/{backup,tmp,colors,plugin,nerdtree_plugin,doc,syntax}
-
-# .vim/colors
-overwrite_and_link \
-  ~/.vim/colors/lucius.vim \
-  $(pwd)/vim/colors/lucius.vim
-overwrite_and_link \
-  ~/.vim/colors/darkspectrum.vim \
-  $(pwd)/vim/colors/darkspectrum.vim
-overwrite_and_link \
-  ~/.vim/colors/molokai.vim \
-  $(pwd)/vim/colors/molokai.vim
-overwrite_and_link \
-  ~/.vim/colors/xoria256.vim \
-  $(pwd)/vim/colors/xoria256.vim
-
-# .vim/plugin
-overwrite_and_link \
-  ~/.vim/plugin/colorsupport.vim \
-  $(pwd)/vim/plugin/colorsupport.vim
-overwrite_and_link \
-  ~/.vim/plugin/NERD_tree.vim \
-  $(pwd)/vim/plugin/NERD_tree.vim
-
-# .vim/doc
-overwrite_and_link \
-  ~/.vim/doc/NERD_tree.txt \
-  $(pwd)/vim/doc/NERD_tree.txt
-
-# .vim/syntax
-overwrite_and_link \
-  ~/.vim/syntax/nerdtree.vim \
-  $(pwd)/vim/syntax/nerdtree.vim
-
-# .vim/nerdtree_plugin
-overwrite_and_link \
-  ~/.vim/nerdtree_plugin/exec_menuitem.vim \
-  $(pwd)/vim/nerdtree_plugin/exec_menuitem.vim
-overwrite_and_link \
-  ~/.vim/nerdtree_plugin/fs_menu.vim \
-  $(pwd)/vim/nerdtree_plugin/fs_menu.vim
+overwrite_and_link ~/.vim $(pwd)/vim
 
