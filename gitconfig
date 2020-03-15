@@ -42,4 +42,6 @@
 	# From Github: http://stackoverflow.com/questions/10641361/git-get-all-files-that-have-been-modified-in-branch
 	cbranch = !"git branch | grep '*' | cut -f2 -d' '"
 	changed = !"git diff --name-only $(git cbranch) $(git merge-base $(git cbranch) develop)"
+[pager]
+	branch = false
 
